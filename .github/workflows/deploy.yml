@@ -34,7 +34,7 @@ jobs:
           cat dist/index.html | grep manifest
       
       - run: |
-        cat dist/index.html | grep favicon
+          cat dist/index.html | grep favicon
 
       - name: Upload files
         uses: easingthemes/ssh-deploy@main
