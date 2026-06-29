@@ -1,0 +1,29 @@
+name: Deploy Astro
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
+
+      - run: bun run build
+
+      - name: Upload files
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: ${{ secrets.PORT }}
+          SOURCE: "dist/"
+          TARGET: "/www/wwwroot/unleafy.cn"
