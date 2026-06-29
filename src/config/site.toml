@@ -4,7 +4,7 @@ description = "A personal website for recording studies and life."
 pageTitle = "Unleafy's Blog"
 pageDescription = "A personal website for recording studies and life."
 repository = "https://github.com/unleafy/blog"
-footerNote = "Released as an open-source starter."
+footerNote = ""
 
 [config.vibe]
 showTrail = true
