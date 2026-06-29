@@ -1,6 +1,6 @@
 {
-  "name": "navfolio",
-  "short_name": "navfolio",
+  "name": "unleafy",
+  "short_name": "unleafy",
   "description": "A personal navigation portfolio starter built with Astro.",
   "start_url": ".",
   "display": "standalone",
