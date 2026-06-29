@@ -30,12 +30,6 @@ jobs:
 
       - run: bun run build
 
-      - run: |
-          cat dist/index.html | grep manifest
-      
-      - run: |
-          cat dist/index.html | grep favicon
-
       - name: Upload files
         uses: easingthemes/ssh-deploy@main
         env:
