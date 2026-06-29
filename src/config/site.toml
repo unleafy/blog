@@ -1,0 +1,189 @@
+[config.site]
+title = "Unleafy"
+description = "A personal website for recording studies and life."
+pageTitle = "Unleafy's Blog"
+pageDescription = "A personal website for recording studies and life."
+repository = "https://github.com/unleafy/blog"
+footerNote = "Released as an open-source starter."
+
+[config.vibe]
+showTrail = true
+
+[config.theme]
+# Available palettes:
+# green-soft, green-vivid, rose-soft, pink-soft, purple-soft, blue-soft, orange-soft, brown-soft
+palette = "orange-soft"
+
+[config.code]
+lightTheme = "catppuccin-latte"
+darkTheme = "catppuccin-macchiato"
+lineNumbers = true
+wrap = true
+preserveIndent = true
+collapseStyle = "collapsible-auto"
+
+[config.math]
+render = "katex" # "katex" | "mathjax"
+
+[config.comments]
+enabled = false
+provider = "none"
+show_on_posts = true
+
+[config.search]
+enabled = true
+shortcut = "mod+k"
+placeholder = "Search notes..."
+maxResults = 6
+
+[config.blog]
+postsPerPage = 6
+
+[config.comments.giscus]
+repo = ""
+repo_id = ""
+category = ""
+category_id = ""
+mapping = "pathname"
+strict = "0"
+reactions_enabled = "1"
+emit_metadata = "0"
+input_position = "top"
+light_theme = "light"
+dark_theme = "dark"
+lang = "zh-CN"
+loading = "lazy"
+
+[config.comments.utterances]
+repo = ""
+issue_term = "pathname"
+label = "comment"
+theme = "github-light"
+
+[config.comments.waline]
+server_url = ""
+lang = "zh-CN"
+dark = "html.dark"
+pageview = true
+comment = true
+
+[config.profile]
+name = "unleafy"
+handle = "@unleafy"
+role = "An OIer and Student"
+company = "None"
+location = "Remote"
+email = "unleafy0327@gmail.com"
+website = "https://unleafy.cn/"
+github = "https://github.com/unleafy"
+meta = "OIer"
+avatar = "/images/logo.png"
+
+[[config.topNav.links]]
+label = "Home"
+href = "/"
+
+[[config.topNav.links]]
+label = "Blog"
+href = "/blog"
+
+# [[config.topNav.links]]
+# label = "Projects"
+# href = "/projects"
+
+[[config.topNav.links]]
+label = "Vibe"
+href = "/vibe"
+
+[[config.topNav.links]]
+label = "About"
+href = "/about"
+
+[config.home]
+layout = "grid"
+
+[config.home.quote]
+text = [
+  "End, Begin Repeat"
+]
+image = ""
+
+[config.home.intro]
+title = "here is unleafy"
+name = "unleafy"
+body = [
+  "Welcome.\n",
+  "This is my little corner of the Internet—a place for ideas, code, experiments, and unfinished thoughts.",
+  "I write about algorithms, Linux, and the things I'm curious enough to dive into.",
+  "Every ending marks the beginning of something new."
+]
+image = "/images/logo.png"
+
+[config.home.latest]
+count = 1
+heatmapWeeks = 24
+showHeatmapLatest = true
+excludeDraft = true
+startDate = ""
+dateArchiveBaseHref = ""
+
+# [[config.home.navigation]]
+# icon = "compass"
+# title = "Portfolio"
+# subtitle = "Selected work and case studies"
+# href = "https://astro.navfolio.site/"
+
+[[config.home.navigation]]
+icon = "pen"
+title = "Blog"
+subtitle = "Essays, notes, and field reports"
+href = "/blog"
+
+# [[config.home.navigation]]
+# icon = "briefcase"
+# title = "Resume"
+# subtitle = "Career profile and experience"
+# href = "https://github.com/dodolalorc/navfolio"
+
+[[config.home.navigation]]
+icon = "github"
+title = "Github Link"
+subtitle = "My own github account"
+href = "https://github.com/unleafy"
+
+# [[config.home.connect]]
+# label = "GitHub"
+# href = "https://github.com/dodolalorc/astro-navfolio"
+# icon = "github"
+
+[[config.home.connect]]
+label = "Website"
+href = "https://unleafy.cn"
+icon = "compass"
+
+[[config.home.connect]]
+label = "Blog"
+href = "/blog"
+icon = "book"
+
+[[config.home.connect]]
+label = "Projects"
+href = "/projects"
+icon = "repo"
+
+[[config.home.connect]]
+label = "Email"
+href = "mailto:unleafy0327@gmail.com"
+icon = "mail"
+
+[[config.home.doing]]
+text = "Learning algorithms"
+mark = "01"
+
+[[config.home.doing]]
+text = "Preparing for the coming competition"
+mark = "02"
+
+[[config.home.doing]]
+text = "Something else"
+mark = "03"
