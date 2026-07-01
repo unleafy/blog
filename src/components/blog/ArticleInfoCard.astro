@@ -20,11 +20,11 @@ const { date, readingTime, tags } = Astro.props;
       <dt>Created</dt>
       <dd><FormattedDate date={date} /></dd>
     </div>
-  </dl>
 
-  <div class="tags" aria-label="Article tags">
-    {tags.map((tag) => <span>{tag}</span>)}
-  </div>
+    <div class="tags" aria-label="Article tags">
+      {tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </dl>
 </aside>
 
 <style>

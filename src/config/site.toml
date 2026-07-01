@@ -4,7 +4,7 @@ description = "A personal website for recording studies and life."
 pageTitle = "Unleafy's Blog"
 pageDescription = "A personal website for recording studies and life."
 repository = "https://github.com/unleafy/blog"
-footerNote = ""
+footerNote = "Powered by Astro and Navfolio."
 
 [config.vibe]
 showTrail = true
@@ -26,8 +26,8 @@ collapseStyle = "collapsible-auto"
 render = "katex" # "katex" | "mathjax"
 
 [config.comments]
-enabled = false
-provider = "none"
+enabled = true
+provider = "waline"
 show_on_posts = true
 
 [config.search]
@@ -61,8 +61,8 @@ label = "comment"
 theme = "github-light"
 
 [config.comments.waline]
-server_url = ""
-lang = "zh-CN"
+server_url = "https://comment.unleafy.cn"
+lang = "en-US"
 dark = "html.dark"
 pageview = true
 comment = true
