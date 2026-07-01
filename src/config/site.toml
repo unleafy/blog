@@ -63,7 +63,7 @@ theme = "github-light"
 [config.comments.waline]
 server_url = "https://comment.unleafy.cn"
 lang = "en-US"
-dark = "html.dark"
+dark = "auto"
 pageview = true
 comment = true
 
