@@ -1,5 +1,5 @@
 ---
-title: "July 8nd 暑期记录"
+title: "July 8th-暑期记录"
 description: ""
 date: "2026-07-08T12:24:01.966Z"
 draft: false
@@ -14,7 +14,7 @@ sidebar:
   relatedPosts: true
 ---
 
-# July 8nd 暑期记录
+# July 8nd-暑期记录
 
 > 前几天去上海了, ~~缺了几天没写题~~
 
