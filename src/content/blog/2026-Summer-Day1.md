@@ -17,6 +17,7 @@ sidebar:
 # 2026 Summer Day1
 
 > Delay always breeds danger, and to protract a great design is often to ruin it.
+>
 > 拖延总是滋生危险，而延长一项伟大的计划往往会导致它的毁灭。
 
 ## 课堂内容
