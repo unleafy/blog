@@ -6,7 +6,7 @@ draft: false
 showHeroImage: false
 tags: ['平衡树']
 categories: ['记录']
-series: ['2026 Summe']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
