@@ -55,11 +55,7 @@ $$
 对比两个式子不难得到 $Y(i) = f_i + (p_i + L)^2, K(i) = 2p_i, X_i=(p_i + L), C(i) = f_i - p_i^2
 $，所以可以用单调队列按照这个形式维护下凸壳，每次取队头的最有决策点更新即可。
 
-
-
 [code](https://www.luogu.com.cn/record/288734198)
-
-
 
 ## CF321E. Ciel and Gondolas
 
@@ -78,3 +74,11 @@ $$
 如果令 $a \le b \le c \le d$，那么 $w(a, c) + w(b, d) \le w(a, d) + w(b, c)$，因为 $w(a, c) + w(b, d) - w(a, d) - w(b, c) = w(a, b - 1) + w(c + 1, d)$，有因为 $u_{i, j} \ge 0$，所以不等式成立。这是一个 **四边形不等式**，所以 *DP* 过程中的最优决策点单调不降，我们就可以通过分治的方式，每次处理处分治中点 $mid$ 的答案，然后递归处理，复杂度 $O(nk \log n)$。
 
 [code](https://codeforces.com/contest/321/submission/384330677)
+
+
+
+关于四边形不等式，放一张图方便理解：
+
+![](../assets/2026%20Summer%20Day10/1.png)
+
+这里的矩形分别表示 $w(a, c), w(b, d), w(a, d), w(b, c)$，不难发现左下和右上部分被多算了，所以有 $w(a, c) + w(b, d) \le w(a, d) + w(b, c)$。
