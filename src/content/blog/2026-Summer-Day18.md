@@ -11,7 +11,7 @@ comments: true
 sidebar:
   enable: true
   toc: true
-  relatedPosts: trueswe
+  relatedPosts: true
 ---
 
 # 2026 Summer Day18
