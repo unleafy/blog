@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day14"
-description: ""
-date: "2026-07-30T11:31:47.115Z"
+title: '2026 Summer Day14'
+description: ''
+date: '2026-07-30T11:31:47.115Z'
 draft: false
 showHeroImage: false
-tags: ["DP"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['DP']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -43,12 +43,12 @@ $$
 
 [code](https://www.luogu.com.cn/record/289638072)
 
------
+---
 
 ~~好像 B 班就这一道可以写写的~~
 不对，还有一道可以写的！
 
------
+---
 
 ## P10959 月之谜
 
@@ -58,6 +58,6 @@ $$
 
 我们考虑直接枚举最后的数位和是多少，然后每次搜索时碰到数位和等于我们枚举的这个数的状态再记录。
 
-为了避免每次都要清空 *DP* 数组，我们可以至记录 $lim = 0$ 的那些状态的 *DP* 值，对于 $lim = 1$ 的直接暴力计算即可，考虑到这部分数很少，所以直接暴力计算也是对的。
+为了避免每次都要清空 _DP_ 数组，我们可以至记录 $lim = 0$ 的那些状态的 _DP_ 值，对于 $lim = 1$ 的直接暴力计算即可，考虑到这部分数很少，所以直接暴力计算也是对的。
 
 [code](https://www.luogu.com.cn/record/289652296)

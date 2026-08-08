@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day19"
-description: ""
-date: "2026-08-06T11:55:11.344Z"
+title: '2026 Summer Day19'
+description: ''
+date: '2026-08-06T11:55:11.344Z'
 draft: false
 showHeroImage: false
 tags: []
-categories: ["记录"]
-series: ["2026 Summer"]
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -24,8 +24,8 @@ sidebar:
 
 我也是成为了罚时奶龙，包揽了我们队所有的罚时。
 
-![](/home/unleafy/blog/src/content/assets/2026%20Summer%20Day19/屏幕截图_20260806_195945.png)
+![](../assets/2026%20Summer%20Day19/屏幕截图_20260806_195945.png)
 
 最后还有神秘奶龙作为小奖品。
 
-![](/home/unleafy/blog/src/content/assets/2026%20Summer%20Day19/83304CC61784132AF49A95905748F7C4.png)
+![](../assets/2026%20Summer%20Day19/83304CC61784132AF49A95905748F7C4.png)

@@ -6,7 +6,7 @@ draft: false
 tags:
   - 字符串
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,14 +17,14 @@ sidebar:
 
 # 2025 Summer Day22
 
-
 # 课堂内容
 
 ## 后缀数组
 
 后缀数组主要指两个数组 $sa$ 和 $rank$：
-+ $sa_i$ 表示所有后缀中按字典序大小从小到大排序后排名为 $i$ 的后缀的起始位置。
-+ $rank_i$ 表示以 $i$ 为起始位置的后缀的排名。
+
+- $sa_i$ 表示所有后缀中按字典序大小从小到大排序后排名为 $i$ 的后缀的起始位置。
+- $rank_i$ 表示以 $i$ 为起始位置的后缀的排名。
 
 其中这两个数组有如下性质：
 

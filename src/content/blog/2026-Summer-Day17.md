@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day17"
-description: ""
-date: "2026-08-02T07:36:22.524Z"
+title: '2026 Summer Day17'
+description: ''
+date: '2026-08-02T07:36:22.524Z'
 draft: false
 showHeroImage: false
-tags: ["博弈论"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['博弈论']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -20,13 +20,13 @@ sidebar:
 
 [题目链接](https://qoj.ac/problem/15321)
 
-> 将一个序列 $a_i$ 分为两个集合 $A, B$，要求 $\oplus_{v \in A} v = 0$，、问是否可行。 
+> 将一个序列 $a_i$ 分为两个集合 $A, B$，要求 $\oplus_{v \in A} v = 0$，、问是否可行。
 
 如果我们统计每个 $x$ 出现的次数 $c(x)$，那么 $x$ 一定是成对被两人轮流取走的，不然先手就更可能达成目标。我们只需要考虑 $\lfloor \frac{c(x)}{2} \rfloor$ 和 $c(x)$ 为奇数的 $x$，令 $num$ 为所有 $\lfloor \frac{c(x)}{2} \rfloor$ 为奇数的 $x$ 的异或和。不难发现先手获胜只有一下两种情况：
 
-+ $c(x)$ 为奇数的 $x$ 的个数为 $0$ 且 $num = 0$;
+- $c(x)$ 为奇数的 $x$ 的个数为 $0$ 且 $num = 0$;
 
-+ $c(x)$ 为奇数的 $x$ 的个数为 $2$ 且 $num$ 为其中之一。
+- $c(x)$ 为奇数的 $x$ 的个数为 $2$ 且 $num$ 为其中之一。
 
 [code](https://qoj.ac/submission/2707392)
 
@@ -44,7 +44,7 @@ sidebar:
 
 [题目链接](https://atcoder.jp/contests/arc168/tasks/arc168_b?lang=en)
 
-这道题在原本的 *Nim* 游戏上增加了最多取走 $k$ 个的限制，但是发现 $a_i \bmod (k + 1) \to a_i$ 后，对新的是否必胜的判定就和 *Nim* 游戏一样了。
+这道题在原本的 _Nim_ 游戏上增加了最多取走 $k$ 个的限制，但是发现 $a_i \bmod (k + 1) \to a_i$ 后，对新的是否必胜的判定就和 _Nim_ 游戏一样了。
 
 考虑输出 $-1$ 的情况，若原本的序列满足 $\oplus a_i \ne 0$，那么所有 $k > max\{a_i\}$ 均满足条件。
 

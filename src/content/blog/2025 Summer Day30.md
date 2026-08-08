@@ -6,7 +6,7 @@ draft: false
 tags:
   - 比赛
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -14,8 +14,8 @@ sidebar:
   toc: true
   relatedPosts: true
 ---
-# 2025 Summer Day30
 
+# 2025 Summer Day30
 
 **Content**：模拟赛
 **Date**：2025.8.15
@@ -52,14 +52,14 @@ sidebar:
 
 给你一个数组 $a$，其中 $a_i$ 表示到达 $i$ 这个位置后你可以到达 $[i+1,a_{i}]$ 中的任何一个位置，求 $\forall i,j$ 互相可达的最小步数之和。
 
-## 解题思路 
+## 解题思路
 
 赛时没有想到是 $dp$，直接写了个 Floyd (20pts) + 部分分(10pts)。
 
 正解是定义 $d_{i,j}$ 表示从 $i$ 到 $j$ 需要的最少步数。容易发现：
 
-+ 若 $j \in [i + 1, a_{i}]$，则 $d_{i,j}=1$。
-+ 若 $j > a_{i}$，则 $d_{i,j} = d_{k,j} + 1$，其中 $k$ 表示 $\max_{t\in[i + 1, a_{i}]} a_t$ 所在的位置。
+- 若 $j \in [i + 1, a_{i}]$，则 $d_{i,j}=1$。
+- 若 $j > a_{i}$，则 $d_{i,j} = d_{k,j} + 1$，其中 $k$ 表示 $\max_{t\in[i + 1, a_{i}]} a_t$ 所在的位置。
 
 然后记 $\displaystyle f_{i} = \sum_{j=i}^{n} d_{i,j}$，则 $f_{i} = f_{p} + (n - i) - (a_{i} - p)$。答案即为 $\displaystyle \sum_{i=0}^{n} f_{i}$。
 

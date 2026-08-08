@@ -1,6 +1,6 @@
 ---
-title: "P1445 [Violet] 樱花"
-description: "P1445 [Violet] 樱花"
+title: 'P1445 [Violet] 樱花'
+description: 'P1445 [Violet] 樱花'
 date: 2025-7-3T03:22:39.534Z
 draft: false
 tags:
@@ -17,13 +17,12 @@ sidebar:
 
 # P1445 [Violet] 樱花
 
-
 ## 算法
-+ 数学（素数筛，因子个数）
 
-
+- 数学（素数筛，因子个数）
 
 ## 思路
+
 对于原式做如下推导：
 
 $$
@@ -75,9 +74,8 @@ $$
 
 根据乘法原理，最后的答案为所有 $sum_{2}$ 的乘积。
 
-
-
 ## 代码
+
 ```c
 #include <bits/stdc++.h>
 
@@ -88,12 +86,12 @@ constexpr int MOD = 1e9 + 7;
 inline vector<int> GetPrimes(int Limit) {
   vector<int> primes;
   vector<bool> mark(Limit + 1);
-  
+
   for (int i = 2; i <= Limit; i ++) {
     if (mark[i] == false) {
       primes.emplace_back(i);
     }
-    
+
     for (int j = 0; i * primes[j] <= Limit; j ++) {
       mark[i * primes[j]] = true;
       if (i % primes[j] == 0) {
@@ -101,7 +99,7 @@ inline vector<int> GetPrimes(int Limit) {
       }
     }
   }
-  
+
   return primes;
 }
 
@@ -109,27 +107,27 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-  
+
   int n;
   cin >> n;
-  
+
   vector<int> primes = GetPrimes(n);
   // * 注意由于是连乘，所以 answer 的初始值为 1.
   long long answer = 1;
-  
+
   for (auto&& p : primes) {
     int alpha = 0, number = n;
-    
+
     while (number) {
       alpha += number / p;
       number /= p;
     }
-    
+
     answer = (answer * (alpha + alpha + 1) % MOD) % MOD;
   }
-  
+
   cout << answer % MOD << '\n';
-  
+
   return 0;
 }
 ```

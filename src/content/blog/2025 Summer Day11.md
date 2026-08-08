@@ -7,7 +7,7 @@ tags:
   - DP
   - 矩阵
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -18,13 +18,9 @@ sidebar:
 
 # 2025 Summer Day11
 
-
 **Content**：矩阵 DP
 
 **Date**：2025.7.27
-
-
-
 
 # Review
 
@@ -32,13 +28,12 @@ sidebar:
 
 # Example1 - [洛谷-P1962](https://www.luoogu.com.cn/problem/P1962) 斐波那契数列
 
-
 ## 题目描述
 
 给定 $n$，求斐波那契数列的第 $n$ 项 $f_n$。
 
 $$
-f_n = 
+f_n =
  \begin{cases}
  1 & n = 0,1 \\
  f_{n-1} + f_{n-2} & oterwise
@@ -46,7 +41,6 @@ f_n =
 $$
 
 数据范围：$n < 2^{63}$。
-
 
 ## 思路
 
@@ -91,7 +85,7 @@ f_{0} \\
 f_{1} \\
 \end{bmatrix}
 
-\times 
+\times
 
 \begin{bmatrix}
 1 & 1 \\
@@ -148,19 +142,19 @@ int main() {
     std::ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    
+
     while (cin >> n >> m) {
         if (n < m) std::swap(n, m);
-        
+
         int line = 0, max_status = 1 << m;
         std::memset(dp, 0, sizeof(dp));
         dp[line][max_status - 1] = 1;
-        
+
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < m; j++) {
                 line = !line;
                 std::memset(dp[line], 0, sizeof(dp[line]));
-                
+
                 for (int status = 0; status < max_status; status++) {
                     if (status >> j & 1) {
                         dp[line][status ^ (1 << j)] += dp[!line][status];
@@ -174,10 +168,10 @@ int main() {
                 }
             }
         }
-        
+
         cout << dp[line][max_status - 1] << '\n';
     }
-    
+
     return 0;
 }
 ```

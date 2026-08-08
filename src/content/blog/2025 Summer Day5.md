@@ -7,7 +7,7 @@ tags:
   - 树上问题
   - 点分治
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -16,22 +16,19 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day5
-
 
 **Content**: Problem on Tree
 
 **Date**：2025.7.21
 
-
 # 概览
 
-+ 树的重心
-+ 树上启发式合并
-+ 树链剖分
-+ 左偏树
-+ 点分治
+- 树的重心
+- 树上启发式合并
+- 树链剖分
+- 左偏树
+- 点分治
 
 # 具体内容
 
@@ -40,29 +37,26 @@ sidebar:
 ### 定义
 
 树的重心是满足如下条件的点 $u$:
-+ 树上不存在其他节点 $v$，使得 $\max\{\operatorname{siz}(son_v)\} < \max\{\operatorname{size}(son_u)\}$。
 
+- 树上不存在其他节点 $v$，使得 $\max\{\operatorname{siz}(son_v)\} < \max\{\operatorname{size}(son_u)\}$。
 
 ### 性质
 
 树的重心 $G$ 有如下性质：
 
-+ 当以 $G$ 为根节点时，不能存在 $v$ 满足 $\max_{\forall v \in \operatorname{son}(u)}\{\operatorname{size}(v)\} > \frac{N}{2}$ ($N$为整棵树的大小)。反之亦然。
-+ 树中所有节点到 $G$ 的**距离之和最小**，如果有两个重心，则距离**相同**。
-+ 如果两棵树的重心分别为 $G_1$，$G_2$，则两棵树由一条边拼接起来之后，新树的重心**一定在 $G_1$ 到 $G_2$ 的路径上**。
-+ 在一棵树上加入 (或删除) 一个叶子节点，其重心**只移动一条边的距离**。
-+ 树的重心一定在**以根节点为链头的重链上**。
-
+- 当以 $G$ 为根节点时，不能存在 $v$ 满足 $\max_{\forall v \in \operatorname{son}(u)}\{\operatorname{size}(v)\} > \frac{N}{2}$ ($N$为整棵树的大小)。反之亦然。
+- 树中所有节点到 $G$ 的**距离之和最小**，如果有两个重心，则距离**相同**。
+- 如果两棵树的重心分别为 $G_1$，$G_2$，则两棵树由一条边拼接起来之后，新树的重心**一定在 $G_1$ 到 $G_2$ 的路径上**。
+- 在一棵树上加入 (或删除) 一个叶子节点，其重心**只移动一条边的距离**。
+- 树的重心一定在**以根节点为链头的重链上**。
 
 ### 例题
 
 [CF685B](www.vjudge.net/problem/CodeForces-685B) Kay and Snowflake
 
-
 **题目大意**：
 
 > 求一颗大小为 $n$ ($1 \le n \le 10^{5}$) 有根树的所有子树的重心。
-
 
 考虑运用性质 $4$，对整棵树进行 $dfs$，每次用子节点的重心暴力向上跳，再用性质 $1$ 检查，复杂度 $\Theta(n \log n)$。
 
@@ -193,15 +187,14 @@ struct DSU {
 给定一个有根树，每个点有一个颜色 $c_i$，对每个子树，求所有出现最多的颜色的和。
 $n \le 10^{5}$
 
-
 我们开一个桶记录每一种颜色再子树内的出现次数，并同时维护两个变量：
 
-+ $max$：当前出现最多的颜色出现的次数。
-+ $sum$：出现最多的颜色的和。
+- $max$：当前出现最多的颜色出现的次数。
+- $sum$：出现最多的颜色的和。
 
 每次我们遍历的时候先遍历轻儿子，再遍历重儿子，传入一个标记 $f$，表示当前的统计数据是否保留，并根据题意维护 $max$ 和 $sum$ 即可。
 
-***Code***
+**_Code_**
 
 ```c
 #include <bits/stdc++.h>
@@ -230,7 +223,7 @@ void add_edge(const int u, const int v) {
 void dfs1(const int u, const int fa) {
     size[u] = 1;
     father[u] = fa;
-    
+
     for (int i = head[u]; ~i; i = e[i].next) {
         int v = e[i].to;
         if (v == fa) continue;
@@ -252,13 +245,13 @@ void update(const int u, const int val, const int ban) {
         max = tot[col[u]];
         sum = col[u];
     }
-    
+
     for (int i = head[u]; ~i; i = e[i].next) {
         const int v = e[i].to;
         if (v == father[u] || v == ban) {
             continue;
         }
-        
+
         update(v, val, ban);
     }
 }
@@ -272,15 +265,15 @@ void dfs2(const int u, const bool heavy_son) {
 
         dfs2(v, false);
     }
-    
+
     if (son[u] != 0) {
         dfs2(son[u], true);
     }
-    
+
     update(u, 1, son[u]);
-    
+
     answer[u] = sum;
-    
+
     if (heavy_son == false) {
         update(u, -1, -1);
         sum = 0;
@@ -292,7 +285,7 @@ int main() {
     std::ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    
+
     std::memset(head, -1, sizeof(head));
 
     cin >> n;
@@ -306,10 +299,10 @@ int main() {
         add_edge(u, v);
         add_edge(v, u);
     }
-    
+
     dfs1(1, 0);
     dfs2(1, true);
-    
+
     for (int i = 1; i <= n; i++) {
         cout << answer[i] << " ";
     }
@@ -324,11 +317,11 @@ int main() {
 
 我们维护 $5$ 个数组：
 
-+ $fa[u]$：表示节点 $u$ 的父亲。
-+ $size[u]$：表示节点 $u$ 的子树大小。
-+ $son[u]$：表示节点 $u$ 的重儿子 (即节点 $u$ 的子节点中子树大小最大的节点) 的编号。
-+ $top[u]$：表示节点 $u$ 所在链的链头编号。
-+ $id[i]$：表示 $dfn$ 值为 $i$ 的节点编号。
+- $fa[u]$：表示节点 $u$ 的父亲。
+- $size[u]$：表示节点 $u$ 的子树大小。
+- $son[u]$：表示节点 $u$ 的重儿子 (即节点 $u$ 的子节点中子树大小最大的节点) 的编号。
+- $top[u]$：表示节点 $u$ 所在链的链头编号。
+- $id[i]$：表示 $dfn$ 值为 $i$ 的节点编号。
 
 这样我们就把整棵树拆成了若干条链和轻边。这样我们就可以用线段树对整棵树进行维护 (每一条链都对应了一段连续的 $dfn$ 区间)。
 
@@ -483,7 +476,7 @@ void dfs2(int u, int link_top) {
     value[num] = initial_value[u];
 
     if (son[u] == 0) return;
-    
+
     dfs2(son[u], link_top);
 
     for (int i = head[u]; ~i; i = e[i].next) {
@@ -503,7 +496,7 @@ void update_range(int u, int v, const long long value) {
         #ifndef OnlineJudge
         cout << u << ' ' << top[u] << " " << v << " " << top[v] << '\n';
         #endif
-        
+
         if (dep[top[u]] < dep[top[v]]) {
             swap(u, v);
         }
@@ -555,7 +548,7 @@ int main() {
     cout.tie(nullptr);
 
     std::memset(head, -1, sizeof(head));
-    
+
     cin >> n >> m >> root >> P;
 
     for (int i = 1; i <= n; i++) {
@@ -615,8 +608,8 @@ int main() {
 我们定义 **外节点** 表示子节点数小于两个的节点。定义一个节点 $u$ 的 $dist_u$ 表示到最近的外节点的距离。
 左偏树满足如下性质：
 
-+ 对于任意一个节点 $u$，均满足 $dist_{\operatorname{lson}(u)} > dist_{\operatorname{rson}(u)}$，即 ***左偏***。
-+ 由上一条性质我们可以推导出：$dist_u = dist_{\operatorname{rson}(u)} + 1$。
+- 对于任意一个节点 $u$，均满足 $dist_{\operatorname{lson}(u)} > dist_{\operatorname{rson}(u)}$，即 **_左偏_**。
+- 由上一条性质我们可以推导出：$dist_u = dist_{\operatorname{rson}(u)} + 1$。
 
 ### 操作
 
@@ -624,12 +617,12 @@ int main() {
 
 左偏树的合并操作有以下几个步骤：
 
-+ 定义 $\operatorname{merge}(x, y)$ 表示将以 $x$ 和 $y$ 为根节点的左偏树合并。
-+ 我们钦定 $val_x < val_y$，将 $x$ 作为合并后的新的根节点 即维护一个小根堆。
-+ 接下来进行 $\operatorname{merge}(\operatorname{lson}(x),y)$。
-+ 然后维护左偏树的性质：
-    + 如果 $dist_{\operatorname{lson}(x)} < dist_{\operatorname{rson}(x)}$，则 $\operatorname{swap}(\operatorname{lson}(x), \operatorname{rson}(x))$。
-    + 维护 $dist_x = dist_{\operatorname{rson}(x)} + 1$。
+- 定义 $\operatorname{merge}(x, y)$ 表示将以 $x$ 和 $y$ 为根节点的左偏树合并。
+- 我们钦定 $val_x < val_y$，将 $x$ 作为合并后的新的根节点 即维护一个小根堆。
+- 接下来进行 $\operatorname{merge}(\operatorname{lson}(x),y)$。
+- 然后维护左偏树的性质：
+  - 如果 $dist_{\operatorname{lson}(x)} < dist_{\operatorname{rson}(x)}$，则 $\operatorname{swap}(\operatorname{lson}(x), \operatorname{rson}(x))$。
+  - 维护 $dist_x = dist_{\operatorname{rson}(x)} + 1$。
 
 #### 删除
 
@@ -765,6 +758,6 @@ int main() {
 
 ### 思想
 
-我们对每个节点进行分治，将树上的路径分为 *经过点 $u$ 的* 和 *不经过点 $u$ 的*，而点 $u$ 通常取树的重心。
+我们对每个节点进行分治，将树上的路径分为 _经过点 $u$ 的_ 和 _不经过点 $u$ 的_，而点 $u$ 通常取树的重心。
 
 典型问题：$K$ 长路径计数。

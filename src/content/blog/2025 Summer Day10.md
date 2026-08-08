@@ -6,7 +6,7 @@ draft: false
 tags:
   - DP
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -15,15 +15,11 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day10
-
 
 **Content**：dp优化
 
 **Date**：2025.7.26
-
-
 
 # 例题
 

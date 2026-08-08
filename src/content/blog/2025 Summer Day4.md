@@ -7,7 +7,7 @@ tags:
   - 数学
   - 矩阵
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -16,31 +16,28 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day4
-
 
 **Content**：Math
 
 **Date**：2025.7.20
 
-
-
 ## 内容
 
-+ 矩阵
-+ 线性方程组
-+ 行列式
-+ 矩阵树定理
-+ 线性基
+- 矩阵
+- 线性方程组
+- 行列式
+- 矩阵树定理
+- 线性基
 
 ## 具体内容
 
 ### 矩阵
 
 #### 矩阵定义
- 
+
 #### 定义
+
 将一些元素排列成若干行，每行放上相同数量的元素，就是一个矩阵 (Matrix)。
 对于矩阵 $A$ 的第 $i$ 行，第 $j$ 列，我们记作 $a_{i,j}$ 或 $a_{ij}$。
 对于举证 $A_{m \times n}$，如果 $m = n$，则我们称矩阵 $A$ 为方阵。
@@ -48,7 +45,7 @@ sidebar:
 #### 矩阵基本操作
 
 1. 矩阵加法：对于矩阵 $A_{m \times n}$, $B_{m \times n}$, 我们定义矩阵加法为 $C_{i,j} = A_{i, j} + B_{i, j}$
-	即矩阵对应位置上的元素之和。
+   即矩阵对应位置上的元素之和。
 2. 标量乘法：对于矩阵 $A_{m \times n}$ 和标量 $x$, 我们定义矩阵的标量乘法为：
 
 $$
@@ -58,11 +55,12 @@ $$
 3. 转置：对于矩阵 $A_{m \times n}$，其转置为:
 
 $$
-	 	A^{T} = 
+	 	A^{T} =
 	 	\begin{bmatrix}
 	 	A_{j, i}
 	 	\end{bmatrix}
 $$
+
 5. 矩阵的拼接：对于矩阵 $A_{m \times n_1}$，$B_{m \times n_2}$，其拼接为记为 $(A \ | \ B)$，其大小为 $m \times (n_1 + n_2)$。
 6. 矩阵的乘法：对于矩阵 $A_{m \times n}$ 和矩阵 $B_{n \times k}$，其矩阵乘法定义为：
 
@@ -72,14 +70,12 @@ $$
 
     	其中 $i \in [1,n]$，$j \in [1,k]$。
     	对于矩阵乘法，有如下性质：
-    
+
     	+ 矩阵乘法具备分配律：$(A + B)C = AC + BC$；
     	+ 矩阵乘法具有结合律：$(AB)C = A(BC)$;
 
-
-
 7. 矩阵乘法单位元：
-   矩阵的乘法单位元 $I$ 为矩阵主对角线上全部为 $1$，其余均为 $0$ 的 $0/1$ 矩阵。 
+   矩阵的乘法单位元 $I$ 为矩阵主对角线上全部为 $1$，其余均为 $0$ 的 $0/1$ 矩阵。
 8. 矩阵的逆：如果对于矩阵 $A$ 存在矩阵 $B$，使得 $AB = I$，则 $B$ 称作矩阵 $A$ 的逆元，记作 $A^{-1}$。
    对于逆元我们可以使用高斯消元求解。我们对矩阵 $(A \ | \ I)$ 进行高斯消元，最后会得到 $(I \ | \ B)$ (若无法把左边化为乘法单位元，则矩阵 $A$ 不存在逆元)，则 $B$ 就为 $A$ 的逆元。
 
@@ -120,9 +116,9 @@ $$
 
 最后的结果可能会有以下三种
 
-+ 如果 $i < n$，且存在 $j$ 使得 $a_{j,n} > 0$，则原线性方程组无解。
-+ 如果 $i < n$，且对于 $\forall j$ 满足 $a_{j,n} = 0$，则原线性方程组有无数解。
-+ 否则原线性方程组有唯一解。
+- 如果 $i < n$，且存在 $j$ 使得 $a_{j,n} > 0$，则原线性方程组无解。
+- 如果 $i < n$，且对于 $\forall j$ 满足 $a_{j,n} = 0$，则原线性方程组有无数解。
+- 否则原线性方程组有唯一解。
 
 [洛谷 P3389](https://www.luogu.com.cn/problem/P3389) **Code**
 
@@ -240,48 +236,48 @@ double a[N][N];
 
 int gauss() {
 	int i, j, c, r = 0;
-	
+
 	for (c = 0; c < n; c ++) {
 		int t = r;
 		for (i = t + 1; i < n; i ++)
 			if (abs(a[i][c]) > abs(a[t][c])) t = i;
-		
+
 		if (abs(a[t][c]) < eps) continue;
-		
+
 		for (i = c; i <= n; i ++) swap(a[t][i], a[r][i]);
-		
+
 		for (i = n; i >= c; i --) a[r][i] /= a[r][c];
-		
+
 		for (i = r + 1; i < n; i ++)
 			if (abs(a[i][c]) > eps)
 				for (j = n; j >= c; j --)
 					a[i][j] -= a[r][j] * a[i][c];
-		
+
 		r ++;
 	}
-	
+
 	if (r < n) {
 		for (i = r; i < n; i ++)
 			if (abs(a[i][n]) > eps) return 2;
 		return 1;
 	}
-	
+
 	for (i = n - 1; i >= 0; i --)
 		for (j = i + 1; j < n; j ++)
 			a[i][n] -= a[i][j] * a[j][n];
-			
+
 	return 0;
 }
 
 int main() {
 	scanf("%d", &n);
-	
+
 	for (int i = 0; i < n; i ++) {
 		for (int j = 0; j <= n; j ++) {
 			scanf("%lf", &a[i][j]);
 		}
 	}
-	
+
 	int t = gauss();
 	if (t == 2) puts("-1");
 	else if (t == 1) puts("0");
@@ -292,7 +288,7 @@ int main() {
 			printf("%.2lf\n", a[i][n]);
 		}
 	}
-	
+
 	return 0;
 }
 ```
@@ -417,11 +413,12 @@ $$
 ![快速求解行列式](https://backend.unleafy.cn/api/v2/objects/image/keaiwvdo1df3qiwfyx.png)
 
 ### 性质
-+ 对矩阵做行 (列) 交换，行列式反号。
+
+- 对矩阵做行 (列) 交换，行列式反号。
   根据排列的奇偶性，我们可以知道交换一个排列中的一对元素，其排列奇偶性也会发生变化，所以 $\operatorname{sgn}(p) = -\operatorname{sgn}(p^{\prime})$，证毕。
-+ 对矩阵做行 (列) 数乘，行列式乘上同样的常数
+- 对矩阵做行 (列) 数乘，行列式乘上同样的常数
   我们知道一个排列包含 $[1,n]$ 之间的所有整数，所以被修改的元素会在每个连乘中出现且每个连乘中仅出现一次，所以可以提到整个式子的前面，证毕。
-+ 对矩阵做行 (列) 加法，行列式不变。
+- 对矩阵做行 (列) 加法，行列式不变。
 
 ### 求解行列式
 
@@ -513,8 +510,8 @@ $L(G)$ 关于 $L(G)_{k,k}$ 的余子式是以 $k$ 为根节点的内向生成树
 在 $K$ 维异或空间下，一个向量可以用一个 $[0,2^k)$ 内的整数表示 (即该数在二进制意义下的每一位都表示一个向量)。
 对于一组向量 $S = \{v_1, v_2, v_3, \dots, v_n\}$：
 
-+ $S$ 中数字的异或和称为这些向量的线性组合。
-+ 若不存在非空子集 $W \subset S$ 满足 $\bigotimes_{v \in W} v = 0$，则称 $S$ 线性无关。
-+ $S$ 的所有子集的异或和的集合构成 $S$ 的张成，记作 $\operatorname{Span}(S)$。
-+ $S$ 的线性基是一个线性无关的向量集合 $W$，满足 $\operatorname{Span}(W) = \operatorname{Span}(S)$。
-+ $K$ 维空间的线性基 $W$ 满足 $\left\vert W \right\vert = K$。
+- $S$ 中数字的异或和称为这些向量的线性组合。
+- 若不存在非空子集 $W \subset S$ 满足 $\bigotimes_{v \in W} v = 0$，则称 $S$ 线性无关。
+- $S$ 的所有子集的异或和的集合构成 $S$ 的张成，记作 $\operatorname{Span}(S)$。
+- $S$ 的线性基是一个线性无关的向量集合 $W$，满足 $\operatorname{Span}(W) = \operatorname{Span}(S)$。
+- $K$ 维空间的线性基 $W$ 满足 $\left\vert W \right\vert = K$。

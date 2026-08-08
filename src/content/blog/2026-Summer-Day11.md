@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day11"
-description: ""
-date: "2026-07-27T14:37:55.142Z"
+title: '2026 Summer Day11'
+description: ''
+date: '2026-07-27T14:37:55.142Z'
 draft: false
 showHeroImage: false
-tags: ["DP 优化"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['DP 优化']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -45,7 +45,7 @@ $$
 
 [题目链接](https://codeforces.com/problemset/problem/1152/F2)
 
-这道题感觉就是神仙题，和出题人脑电波对上了就对了。我们观察发现题目限制都是和值域有关的，所以我们不妨以值域为 *DP* 状态。我们令 $dp_{i, j, S}$ 表示当前考虑到了第 $i$ 个位置，选择的序列长度为 $j$，且最后 $m$ 个数的选取状态为 $S$，那么显然第 $i$ 个树插入到空位和开头都是合法的。所以我们有如下转移：
+这道题感觉就是神仙题，和出题人脑电波对上了就对了。我们观察发现题目限制都是和值域有关的，所以我们不妨以值域为 _DP_ 状态。我们令 $dp_{i, j, S}$ 表示当前考虑到了第 $i$ 个位置，选择的序列长度为 $j$，且最后 $m$ 个数的选取状态为 $S$，那么显然第 $i$ 个树插入到空位和开头都是合法的。所以我们有如下转移：
 
 $$
 \begin{aligned}
@@ -64,7 +64,7 @@ $$
 
 [题目链接](https://www.luogu.com.cn/problem/P4719)
 
-这道题如果不考虑修改操作的话，就是 **没有上司的舞会**，我们令 $f_{u, 0/1}$ 表示当前 $u$ 节点选/不选带来的最大价值。则有转移：    
+这道题如果不考虑修改操作的话，就是 **没有上司的舞会**，我们令 $f_{u, 0/1}$ 表示当前 $u$ 节点选/不选带来的最大价值。则有转移：
 
 $$
 \begin{aligned}

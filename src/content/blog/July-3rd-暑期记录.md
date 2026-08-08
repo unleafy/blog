@@ -1,12 +1,12 @@
 ---
-title: "July 3rd-暑期记录"
-description: ""
-date: "2026-07-03T12:08:15.744Z"
+title: 'July 3rd-暑期记录'
+description: ''
+date: '2026-07-03T12:08:15.744Z'
 draft: false
 showHeroImage: false
-tags: ["二分图", "网络流", "圆方树"]
-categories: ["记录"]
-series: ["2026 暑期记录"]
+tags: ['二分图', '网络流', '圆方树']
+categories: ['记录']
+series: ['2026 暑期记录']
 comments: true
 sidebar:
   enable: true
@@ -22,7 +22,7 @@ sidebar:
 
 [题目链接](https://luogu.com.cn/problem/P2065)
 
-第一眼看过去以为是二分图最大匹配的板子题, 交了两发 *70pts*, 才发现数据保证的不是 $\sum n, m \le 500$, 而是 $n, m \le 500$, 所以要考虑优化.
+第一眼看过去以为是二分图最大匹配的板子题, 交了两发 _70pts_, 才发现数据保证的不是 $\sum n, m \le 500$, 而是 $n, m \le 500$, 所以要考虑优化.
 
 发现原图最坏的情况是有 $mn$ 条边的, 考虑如何优化掉边的数量. 又联想到如果 $a = \prod p_i^{\alpha_i}, b = \prod p_i^{\beta_i}$, 那么 $\gcd(a, b) = \prod p_i^{\min(\alpha_i, \beta_i)}$, 而且 $p_i > 1$, 所以我们可以对原来的数据进行质因数分解, 然后分别将他们和 $p_i$ 连容量为 $1$ 的边, 再建立源点和汇点, 向他们连容量为 $1$ 的边, 然后跑最大流就可以了.
 

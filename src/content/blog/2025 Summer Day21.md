@@ -5,7 +5,7 @@ date: '2025-08-02T03:22:39.534Z'
 draft: false
 tags: []
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -14,9 +14,7 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day21
-
 
 # [Luogu-P13270](https://www.luogu.com.cn/problem/P13270) 最小表示法
 
@@ -47,15 +45,16 @@ sidebar:
 ## 题意
 
 有一个人在嗑 $n$ 个瓜子，每次在瓜子中等概率拿出一个，有以下两种情况：
+
 1. 如果拿出的是瓜子，则吃掉，并把壳扔回瓜子中。
 2. 如果拿出的是壳，则将其丢弃。
-求他吃掉所有瓜子的期望。
+   求他吃掉所有瓜子的期望。
 
 ## 思路
 
 定义 $dp_{i,j}$ 表示有 $i$ 个瓜子和 $j$ 个壳的期望。根据题意写出转移即可。
 
-***Important***：注意空间，因为 $j_{max}$ 可以达到 $2 \times n$，所以第二维要开到两倍。
+**_Important_**：注意空间，因为 $j_{max}$ 可以达到 $2 \times n$，所以第二维要开到两倍。
 
 ## Code
 
@@ -84,12 +83,12 @@ int main() {
     std::ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    
+
     int n;
     cin >> n;
-    
+
     dp[n][0] = 1;
-    
+
     for (int i = n - 1; i >= 0; i--) {
         for (int j = (n - i) * 2; j >= (i == 0 ? 2 : 0); j--) {
             if (i == 0) {
@@ -105,7 +104,7 @@ int main() {
             }
         }
     }
-    
+
     #ifndef OnlineJudge
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= 2 * (n - i); j++) {
@@ -114,14 +113,14 @@ int main() {
         cout << '\n';
     }
     #endif
-    
+
     long long answer = 0;
     for (int i = 1; i <= n * 2; i++) {
         answer = (answer + (3 * n - i) * dp[0][i] % MOD) % MOD;
     }
-    
+
     cout << answer << '\n';
-    
+
     return 0;
 }
 ```

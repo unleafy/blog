@@ -28,15 +28,15 @@ $$
 
 且 $m_i$ 两两互质的情况下，用如下过程：
 
-+ 令 $M = \prod_i m_i$，
+- 令 $M = \prod_i m_i$，
 
-+ 对于每一个 $i$，令 $t_i = \frac{M}{m_i}$。计算 $t_i$ 在模 $m_i$ 下的逆元 $t_i^{-1}$，
+- 对于每一个 $i$，令 $t_i = \frac{M}{m_i}$。计算 $t_i$ 在模 $m_i$ 下的逆元 $t_i^{-1}$，
 
-+ 令 $c_i = t_it_i^{-1}$，
+- 令 $c_i = t_it_i^{-1}$，
 
-+ 方程组的解为 $\sum_{i} a_ic_i \pmod{M}$。
+- 方程组的解为 $\sum_{i} a_ic_i \pmod{M}$。
 
- 考虑正确性。由于 $t_i = \frac{M}{m_i}$，即 $j \ne i, m_j | t_i$，则对于 $j \ne i$，都有 $t_j \equiv 0 \pmod{n_i}$，所以 $c_j \equiv t_j \equiv 0 \pmod{n_i}$。又因为 $c_i = t_it_i^{-1}$，则 $c_i \equiv 1 \pmod{n_i}$。对于最终答案 $x = \sum_i a_ic_i \pmod{M}$：
+考虑正确性。由于 $t_i = \frac{M}{m_i}$，即 $j \ne i, m_j | t_i$，则对于 $j \ne i$，都有 $t_j \equiv 0 \pmod{n_i}$，所以 $c_j \equiv t_j \equiv 0 \pmod{n_i}$。又因为 $c_i = t_it_i^{-1}$，则 $c_i \equiv 1 \pmod{n_i}$。对于最终答案 $x = \sum_i a_ic_i \pmod{M}$：
 
 $$
 x \equiv a_ic_i \equiv a_i \cdot t_i (t_i^{-1} \bmod n_i) \equiv a_i \pmod{n_i}

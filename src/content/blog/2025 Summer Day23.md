@@ -6,7 +6,7 @@ draft: false
 tags:
   - 交互
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -15,9 +15,7 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day23
-
 
 # 题目
 

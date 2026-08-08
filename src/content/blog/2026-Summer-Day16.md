@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day16"
-description: ""
-date: "2026-08-01T06:51:28.371Z"
+title: '2026 Summer Day16'
+description: ''
+date: '2026-08-01T06:51:28.371Z'
 draft: false
 showHeroImage: false
-tags: ["数学", "生成函数"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['数学', '生成函数']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -55,4 +55,3 @@ sidebar:
 > 在一个二维平面内，每次可以向下或者向右走一步，最终中点为 $(n, m)$，走过直线 $y=x$ 的期望次数。
 
 [code](https://atcoder.jp/contests/agc019/submissions/78064924)
-

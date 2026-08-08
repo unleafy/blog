@@ -7,7 +7,7 @@ tags:
   - 数据结构
   - 平衡树
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -18,23 +18,20 @@ sidebar:
 
 # 2025 Summer Day13
 
-
 **Content**：平衡树
 
 **Date**：2025.7.29
-
-
 
 # 具体内容
 
 ## Leafy Tree 和 Un-leafy Tree
 
-*Leafy Tree*：表示将所有的数据存放在叶子节点的树形数据结构，类似 **线段树** 和 **WBLT 平衡树**。
-*Un-leafy Tree*：与 *Leafy Tree* 相反，将数据存放在每个树节点的数据结构。
+_Leafy Tree_：表示将所有的数据存放在叶子节点的树形数据结构，类似 **线段树** 和 **WBLT 平衡树**。
+_Un-leafy Tree_：与 _Leafy Tree_ 相反，将数据存放在每个树节点的数据结构。
 
 ## 替罪羊树
 
-替罪羊树是最简单的平衡树，也是 *Un-leafy* 的，其核心思想是定义一个常数 $\alpha$，对于树上任意节点 $u$，若 $\max(siz_{ls_{u}}, siz_{rs_{u}}) \ge \alpha \times siz_u$，则将整棵树拍平成数组，对整棵树重构，使其保持平衡性。
+替罪羊树是最简单的平衡树，也是 _Un-leafy_ 的，其核心思想是定义一个常数 $\alpha$，对于树上任意节点 $u$，若 $\max(siz_{ls_{u}}, siz_{rs_{u}}) \ge \alpha \times siz_u$，则将整棵树拍平成数组，对整棵树重构，使其保持平衡性。
 
 替罪羊树的复杂度是 $O(n \log n)$ （**均摊**）的，同时 $\alpha$ 的取值对复杂度的影响是直接的，当 $\alpha$ 在区间 $[0.5,1]$ 之间时，复杂度时最优的，一般取 $\alpha = 0.7$。
 

@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day7"
-description: ""
-date: "2026-07-23T14:05:22.783Z"
+title: '2026 Summer Day7'
+description: ''
+date: '2026-07-23T14:05:22.783Z'
 draft: false
 showHeroImage: false
-tags: ["模拟赛"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['模拟赛']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -46,9 +46,9 @@ sidebar:
 ## T3 晚安。
 
 > 定义 $f(x, i)$ 表示 $x$ 在二进制下的第 $i$ 位。
-> 
+>
 > 定义 $\displaystyle cost(p, q) = \sum_{i} ((f(p, i) \mid f(q, i))x_{i} + (f(p, i) \& f(q, i))y_{i} + (f(p, i) \oplus f(q, i))z_{i})$。
-> 
+>
 > 给定一个数组 $a$ 求 $\displaystyle \max_{1 \le i \le n, 1 \le j \le n} cost(a_{i}, a_{j})$，有 $q$ 次操作，每次向 $a$ 数组末尾插入一个新值，并输出答案。$\sum n \le 10^6$
 
 这道题特别的毒瘤，但也算是一道挺好的题目。
@@ -78,7 +78,7 @@ sidebar:
           long long n0 = -INF, n1 = -INF;
 
           if (o0 != -INF) {
-            n0 = o0; 
+            n0 = o0;
             n1 = o0 + w01;
           }
           if (o1 != -INF) {

@@ -6,7 +6,7 @@ draft: false
 tags:
   - DP
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,17 +17,14 @@ sidebar:
 
 # 2025 Summer Day9
 
-
 **Content**：DP (state, num)
 
 **Date**：2025.7.25
 
-
-
 # 概览
 
-+ 数位 DP
-+ 状压 DP
+- 数位 DP
+- 状压 DP
 
 # 内容
 
@@ -51,10 +48,8 @@ for (int i = 0; i < (1 << n); i++) {
 
 数位 DP，即不是以数字为状态进行动态规划，而是和人一样，对于数字的每个数位作为状态，常见问题为：
 
-
 **常见问题：**
 给定区间 $[L,R]$，求出在这个区间中满足某种条件的数的个数。
-
 
 # 例题
 
@@ -66,8 +61,8 @@ for (int i = 0; i < (1 << n); i++) {
 
 首先根据题意，我们要排除一些不合法的放置状态：
 
-+ 对于 $\forall s$，如果 $s \ \& \ s << 1$ 或 $s \ \& \ s >> 1$ 不为 $0$，那么状态 $s$ 不合法。（不能左右相邻）
-+ 对于任意相邻两行的状态 $\forall s,t$，如果 $s \ \& \ t$ 或 $s \ \& \ t << 1$ 或 $s \ \& \ t << 1$ 不为 $0$，那么状态 $s,t$ 不合法。（题目要求）
+- 对于 $\forall s$，如果 $s \ \& \ s << 1$ 或 $s \ \& \ s >> 1$ 不为 $0$，那么状态 $s$ 不合法。（不能左右相邻）
+- 对于任意相邻两行的状态 $\forall s,t$，如果 $s \ \& \ t$ 或 $s \ \& \ t << 1$ 或 $s \ \& \ t << 1$ 不为 $0$，那么状态 $s,t$ 不合法。（题目要求）
 
 然后对于转移就是对于所有合法状态的累加。
 提交记录：[link](https://www.luogu.com.cn/record/226743063)
@@ -92,7 +87,6 @@ $$
 
 ## [洛谷-P4363](https://www.luogu.com.cn/problem/P4363) 一双木棋 chess
 
-
 ### 思路
 
 轮廓线 DP。
@@ -111,6 +105,6 @@ $$
 
 答案即为 $\Large \prod_{i=1}^{\log_2n} i^{dp_{\log_2 n,i,0}}$。
 
-**注意**：统计 $dp$ 数组的时候不可以取模（也不会爆 *long long*）
+**注意**：统计 $dp$ 数组的时候不可以取模（也不会爆 _long long_）
 
 提交记录：[link](https://www.luogu.com.cn/record/226830688)

@@ -1,6 +1,6 @@
 ---
-title: "SP1716 GSS3 - Can you answer these queries III"
-description: "SP1716 GSS3 - Can you answer these queries III"
+title: 'SP1716 GSS3 - Can you answer these queries III'
+description: 'SP1716 GSS3 - Can you answer these queries III'
 date: 2025-7-5T03:22:39.534Z
 draft: false
 tags:
@@ -15,16 +15,11 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # SP1716 GSS3 - Can you answer these queries III
-
 
 ## 算法
 
-+ 线段树
-
-
-
+- 线段树
 
 ## 思路
 
@@ -36,6 +31,7 @@ sidebar:
 3. 跨过中间，区间 $[l_1,r_1]$ 的右边部分和区间 $[l_2,r_2]$ 的左边部分合并后的最大子段和。
 
 所以线段树要维护的信息有四个：
+
 1. 区间和
 2. 区间最大子段和
 3. 区间左侧最大子段和。
@@ -43,9 +39,7 @@ sidebar:
 
 对以上四个信息分别维护即可。
 
-
 ## 代码
-
 
 ```c
 #include <bits/stdc++.h>
@@ -160,12 +154,12 @@ int main() {
   }
 
   segment_tree.build_tree(1, 1, n);
-  
+
   std::cin >> m;
 
   while (m--) {
     std::cin >> op >> l >> r;
-    
+
     if (op == 0) {
       segment_tree.modify(1, l, r);
     } else if (op == 1) {

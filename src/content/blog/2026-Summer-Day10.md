@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day10"
-description: ""
-date: "2026-07-26T12:48:41.696Z"
+title: '2026 Summer Day10'
+description: ''
+date: '2026-07-26T12:48:41.696Z'
 draft: false
 showHeroImage: false
-tags: ["DP 优化"]
-btcategories: ["记录"]
-series: ["2026 Summer"]
+tags: ['DP 优化']
+btcategories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -63,7 +63,7 @@ $，所以可以用单调队列按照这个形式维护下凸壳，每次取队�
 
 给定一个数组 $u_{i, j}$，求将 $n$ 个人分为 $k$ 段，使得 $\displaystyle \sum_{i, j \in S_t} u_{i, j}$ 的最小值。
 
-如果暴力 *DP*，令 $f_{i, j}$ 表示前 $j$ 个人分 $i$ 段得到的最小代价，转移为：
+如果暴力 _DP_，令 $f_{i, j}$ 表示前 $j$ 个人分 $i$ 段得到的最小代价，转移为：
 
 $$
 f_{i, j} = \min f_{i - 1, k - 1} + cost(k, j)
@@ -71,11 +71,9 @@ $$
 
 其中 $cost(k, j) = \sum_{k \le x \le y \le j} u_{x, y}$，这个可以前缀和预处理出来，但是朴素的转移依旧是 $O(kn^2)$ 的，无法通过。
 
-如果令 $a \le b \le c \le d$，那么 $w(a, c) + w(b, d) \le w(a, d) + w(b, c)$，因为 $w(a, c) + w(b, d) - w(a, d) - w(b, c) = w(a, b - 1) + w(c + 1, d)$，有因为 $u_{i, j} \ge 0$，所以不等式成立。这是一个 **四边形不等式**，所以 *DP* 过程中的最优决策点单调不降，我们就可以通过分治的方式，每次处理处分治中点 $mid$ 的答案，然后递归处理，复杂度 $O(nk \log n)$。
+如果令 $a \le b \le c \le d$，那么 $w(a, c) + w(b, d) \le w(a, d) + w(b, c)$，因为 $w(a, c) + w(b, d) - w(a, d) - w(b, c) = w(a, b - 1) + w(c + 1, d)$，有因为 $u_{i, j} \ge 0$，所以不等式成立。这是一个 **四边形不等式**，所以 _DP_ 过程中的最优决策点单调不降，我们就可以通过分治的方式，每次处理处分治中点 $mid$ 的答案，然后递归处理，复杂度 $O(nk \log n)$。
 
 [code](https://codeforces.com/contest/321/submission/384330677)
-
-
 
 关于四边形不等式，放一张图方便理解：
 

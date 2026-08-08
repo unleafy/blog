@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day18"
-description: ""
-date: "2026-08-03T05:40:11.673Z"
+title: '2026 Summer Day18'
+description: ''
+date: '2026-08-03T05:40:11.673Z'
 draft: false
 showHeroImage: false
-tags: ["构造"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['构造']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -31,7 +31,7 @@ sidebar:
 [题目链接](https://acm.hdu.edu.cn/showproblem.php?pid=6664)
 
 > 给一张无向带权图，求走过 **恰好 $k$ 个点的简单路径的边权之和的最大值**。
-> 
+>
 > $n, m \le 10^4$
 
 考虑随机化做法。给每个点随机一个 $[0, k)$ 之间的随机颜色，然后要求求出一条路径使得路径上 $[0, k)$ 之间的每种颜色恰好出现一次。然后直接枚举当前的颜色状态和转移的点即可。单次解答的时间复杂度为 $O(2^knm \times P)$，其中 $P$ 是随机赋值的次数。
@@ -48,7 +48,7 @@ sidebar:
 
 考虑如何优化。不难发现，如果一个点满足 $\deg(u) < 8$，那么这个点显然可以通过遍历它的邻接点来找到一个尚未被使用的颜色，所以可以直接不传 $\deg(u) < 8$ 的点的方案。这时候的数据大小是 $\frac{3m}{4}$ 的，仍然无法通过。
 
-如果我们考虑将表示颜色的三个 bit 转换为两个 bit，这个时候我们可以通过枚举最后一个 bit 的取值来找到这个点的颜色。所以传输大小缩小至 $\frac{m}{2}$，可以通过。 
+如果我们考虑将表示颜色的三个 bit 转换为两个 bit，这个时候我们可以通过枚举最后一个 bit 的取值来找到这个点的颜色。所以传输大小缩小至 $\frac{m}{2}$，可以通过。
 
 [code](https://qoj.ac/submission/2714343)
 

@@ -6,7 +6,7 @@ draft: false
 tags:
   - 数学
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,12 +17,9 @@ sidebar:
 
 # 2025 Summer Day14
 
-
 **Content**：数论
 
 **Date**：2025.7.30
-
-
 
 # 课堂内容
 
@@ -35,7 +32,7 @@ $$
 1 & n=1 \\
 (-1)^k & n = p_1 p_2 p_3 \dots p_k, \forall p_i \in P \\
 0 & otherwise \\
-\end{cases} 
+\end{cases}
 $$
 
 其中莫比乌斯函数有如下性质：
@@ -71,7 +68,9 @@ $$
 ## [Luogu-P2257](https://www.luogu.com.cn/problem/P2257) YY的GCD
 
 ### 题意
+
 给定 $n$，$m$，求：
+
 $$
 \sum_{i=1}^n \sum_{j=1}^m [gcd(i,j) \in Prime]
 $$
@@ -90,7 +89,7 @@ $$
 
 $$
 \begin{aligned}
-& \sum_{p \in Prime} \sum_{i=1}^n \sum_{j=1}^m [gcd(\frac{i}{p}, \frac{j}{p}) = 1] \\ 
+& \sum_{p \in Prime} \sum_{i=1}^n \sum_{j=1}^m [gcd(\frac{i}{p}, \frac{j}{p}) = 1] \\
 =& \sum_{p \in Prime} \sum_{i=1}^{\lfloor \frac{n}{p} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{p} \rfloor} [gcd(i,j) = 1]
 \end{aligned}
 $$

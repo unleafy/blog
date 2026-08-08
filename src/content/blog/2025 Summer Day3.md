@@ -6,7 +6,7 @@ draft: false
 tags:
   - 数据结构
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,51 +17,45 @@ sidebar:
 
 # 2025 Summer Day3
 
-
 **Content**： Data structs
 
 **Date**：2025.7.19
 
-
-
 ## 内容
 
-+ 三维偏序问题
-+ CDQ分治
-+ 整体二分
-+ 分块
-+ 莫队算法
+- 三维偏序问题
+- CDQ分治
+- 整体二分
+- 分块
+- 莫队算法
 
 ## 具体内容
 
 ### 三维偏序问题
 
-
 #### 问题描述
 
->给定一些三元组 $(a_i, b_i, c_i)$，询问对于三元组 $(a_j, b_j, c_j)$，有多少个三元组满足 $a_i \le a_j$ 且 $b_i \le b_j$ 且 $c_i \le c_j$。
-
+> 给定一些三元组 $(a_i, b_i, c_i)$，询问对于三元组 $(a_j, b_j, c_j)$，有多少个三元组满足 $a_i \le a_j$ 且 $b_i \le b_j$ 且 $c_i \le c_j$。
 
 首先对于这个问题，我们考虑先去重，然后排序。排序规则如下：
-  + 如果 $a_i \ne a_j$，则返回 $a_i < a_j$
-  + 如果 $b_i \ne b_j$，则返回 $b_i < b_j$
-  + 否则返回 $c_i < c_j$
+
+- 如果 $a_i \ne a_j$，则返回 $a_i < a_j$
+- 如果 $b_i \ne b_j$，则返回 $b_i < b_j$
+- 否则返回 $c_i < c_j$
 
 这样我们就把 $a_i < a_j$ 的条件去掉了。
 
 接下来我们考虑分治，定义函数 $solve(l, r)$ 表示当前解决到了区间 $[l, r]$，取其中点 $mid$，将原序列的问题转化为三个部分：
-+ $j < i \le mid$，由 $solve(l, mid)$ 解决。
-+ $mid < j < i$，由 $solve(mid + 1, r)$ 解决。
-+ $j \le mid < i$，即被 $mid$ 分成了两个部分。
+
+- $j < i \le mid$，由 $solve(l, mid)$ 解决。
+- $mid < j < i$，由 $solve(mid + 1, r)$ 解决。
+- $j \le mid < i$，即被 $mid$ 分成了两个部分。
 
 对于第三种情况，我们需要解决的是如下问题：
 
-
 #### 问题描述
 
->在区间 $[l,r]$ 中，有多少对二元组 $(i, j)$ （其中 $i \ne j$）满足 $b_i < b_j$ 且 $c_i < c_j$。
-
-
+> 在区间 $[l,r]$ 中，有多少对二元组 $(i, j)$ （其中 $i \ne j$）满足 $b_i < b_j$ 且 $c_i < c_j$。
 
 可见问题转化为了二维偏序问题，用线段树解决就可以。
 
@@ -75,19 +69,19 @@ sidebar:
 你需要维护 n 个可重整数集，集合的编号从 1 到 n。  
 这些集合初始都是空集，有 m 个操作：
 
- - `1 l r c`：表示将 c 加入到编号在 $[l,r]$ 内的集合中
- - `2 l r c`：表示查询编号在 $[l,r]$ 内的集合的并集中，第 c 大的数是多少。
+- `1 l r c`：表示将 c 加入到编号在 $[l,r]$ 内的集合中
+- `2 l r c`：表示查询编号在 $[l,r]$ 内的集合的并集中，第 c 大的数是多少。
 
- 注意可重集的并是不去除重复元素的，如 $\set{1,1,4} \cup \set{5,1,4}=\set{1,1,4,5,1,4}$。
+注意可重集的并是不去除重复元素的，如 $\set{1,1,4} \cup \set{5,1,4}=\set{1,1,4,5,1,4}$。
 
 我们还是定义 $solve(l, r, ql, qr)$ 表示当前答案区间为 $[l, r]$，处理的操作区间为 $[ql, qr]$，取答案中点 $mid$。将操作分为如下四类
 
-+ 如果当前操作是修改 （$op = 1$）
-  + 如果 $c \le mid$：归为 $A$ 类，由左递归处理。
-+ 如果 $c > mid$：归为 $B$ 类，由右递归处理，且用树状数组维护当前比 $mid$ 大的数的个数（差分）。
-+ 如果当前操作是查询（$op = 2$）
-  + 如果 $c \le mid$：归为 $A$ 类，由左递归处理。
-  + 如果 $c > mid$：归为 $B$ 类，由右递归处理，并调整 $c$ 的值，以保证结果正确性。
+- 如果当前操作是修改 （$op = 1$）
+  - 如果 $c \le mid$：归为 $A$ 类，由左递归处理。
+- 如果 $c > mid$：归为 $B$ 类，由右递归处理，且用树状数组维护当前比 $mid$ 大的数的个数（差分）。
+- 如果当前操作是查询（$op = 2$）
+  - 如果 $c \le mid$：归为 $A$ 类，由左递归处理。
+  - 如果 $c > mid$：归为 $B$ 类，由右递归处理，并调整 $c$ 的值，以保证结果正确性。
 
 ```c
 #include <bits/stdc++.h>
@@ -177,7 +171,7 @@ int main() {
 using namespace std;
 
 const int N = 1e6 + 5;
-struct Node { 
+struct Node {
 	int l, r, k;
 }q[N];
 int pos[N], cnt[N], a[N], ans = 0, rec[N];
@@ -201,25 +195,25 @@ void del(int x) {
 
 int main() {
 	cin >> n;
-	
+
 	int block = sqrt(n);
-	
+
 	for(int i = 1; i <= n; i ++) {
 		cin >> a[i];
 		pos[i] = (i - 1) / block + 1;
 	}
-	
+
 	cin >> m;
-	
+
 	for(int i = 1; i <= m; i ++) {
 		cin >> q[i].l >> q[i].r;
 		q[i].k = i;
 	}
-	
+
 	sort(q + 1, q + m + 1, cmp);
-	
+
 	int L = 1, R = 0;
-	
+
 	for(int i = 1; i <= m; i ++) {
 		while(L < q[i].l) {
 			del(L);
@@ -237,12 +231,12 @@ int main() {
 			R ++;
 			add(R);
 		}
-		
+
 		rec[q[i].k] = ans;
 	}
-	
+
 	for(int i = 1; i <= m; i ++) cout << rec[i] << endl;
-	
+
 	return 0;
 }
 ```

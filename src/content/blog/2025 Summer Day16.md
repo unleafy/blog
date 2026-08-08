@@ -6,7 +6,7 @@ draft: false
 tags:
   - 数学
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,12 +17,9 @@ sidebar:
 
 # 2025 Summer Day16
 
-
 **Content**：生成函数，多项式，期望
 
 **Date**：2025.8.1
-
-
 
 # 课堂内容
 
@@ -30,14 +27,14 @@ sidebar:
 
 ### 定义
 
-+ 普通生成函数（OGF）：普通生成函数的定义为形式幂级数：$\displaystyle F(x) = \sum_{i} a_i x^i$
-+ 指数生成函数（EGF）：指数生成函数的定义为形式幂级数：$\displaystyle F(x) = \sum_{i} a_i \frac{x^i}{i!}$
-      
+- 普通生成函数（OGF）：普通生成函数的定义为形式幂级数：$\displaystyle F(x) = \sum_{i} a_i x^i$
+- 指数生成函数（EGF）：指数生成函数的定义为形式幂级数：$\displaystyle F(x) = \sum_{i} a_i \frac{x^i}{i!}$
+
 ### 普通生成函数的基本运算
 
-+ $\displaystyle F(x) \pm G(x) = \sum_{i} (a_i \pm b_i) x^i$
-+ $\displaystyle F(x)G(x) = \sum_{n} x^n \sum_{i=0}^n a_i b_{n-i}$
-+ 封闭形式。Like: $\displaystyle F(x) = \sum_{n \ge 0} x^n = \frac{1}{1-x}$
+- $\displaystyle F(x) \pm G(x) = \sum_{i} (a_i \pm b_i) x^i$
+- $\displaystyle F(x)G(x) = \sum_{n} x^n \sum_{i=0}^n a_i b_{n-i}$
+- 封闭形式。Like: $\displaystyle F(x) = \sum_{n \ge 0} x^n = \frac{1}{1-x}$
 
 证明：
 
@@ -60,7 +57,7 @@ F(x)G(x) &= \sum_{i \ge 0} a_i \frac{x^i}{i!} \sum_{j \ge 0} b_j \frac{x^j}{j!} 
 &= \sum_{n \ge 0} \frac{x^n}{n!} \sum_{i=0}^n \binom{n}{i} a_i b_{n-i}
 \end{aligned}
 $$
-  
+
 即 $F(x)G(x)$ 的结果是序列 $\displaystyle \sum_{i=0}^n \binom{n}{i} a_i b_{n-i}$ 的指数生成函数。
 
 # 例题

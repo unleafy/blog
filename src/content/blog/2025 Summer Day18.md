@@ -6,7 +6,7 @@ draft: false
 tags:
   - 构造
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -16,7 +16,6 @@ sidebar:
 ---
 
 # 2025 Summer Day18
-
 
 # 课堂内容
 
@@ -50,7 +49,6 @@ sidebar:
 2. 当 $n \nmid 2$ 时
    我们考虑通过上面的构造延伸，构造一个 正 $(n-1)$ 边形，然后在中间加入一个点，把每一条曼哈顿路的起点和中点和这个点相连，就得到了 $n$ 为奇数时的构造。下面是其中一条曼哈顿回路。
    ![img](https://backend.unleafy.cn/api/v2/objects/icon/nm9f8r793d85iwnyiy.png)
-   
 
 # 后记
 

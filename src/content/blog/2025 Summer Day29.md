@@ -6,7 +6,7 @@ draft: false
 tags:
   - 杂题
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,10 +17,8 @@ sidebar:
 
 # 2025 Summer Day29
 
-
 **Content**：杂题
 **Date**：2025.8.14
-
 
 # [CodeForces-1870E](https://www.luogu.com.cn/problem/CF1870E) Another MEX Problem
 
@@ -45,8 +43,9 @@ sidebar:
 ## 解题思路
 
 首先我们可以找到第一个和最后一个出现的 B 的位置。
-+ 左侧最后一个满足 $m_{1,n} = m_{l,n}$ 的位置 $l$。
-+ 右侧最后一个满足 $m_{1,n} = m_{1,r}$ 的位置 $r$。
+
+- 左侧最后一个满足 $m_{1,n} = m_{l,n}$ 的位置 $l$。
+- 右侧最后一个满足 $m_{1,n} = m_{1,r}$ 的位置 $r$。
 
 然后我们考虑根据已知信息推出区间 $(l,r)$ 内的 B 的位置。主要有以下三种情况 ($cur$ 表示当前已知的 B 的数量)：
 

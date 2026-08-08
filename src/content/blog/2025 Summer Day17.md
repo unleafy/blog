@@ -6,7 +6,7 @@ draft: false
 tags:
   - 博弈论
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -15,15 +15,11 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day17
-
 
 **Content**：博弈论
 
 **Date**：2025.8.2
-
-
 
 # 课堂内容
 
@@ -121,11 +117,12 @@ sidebar:
 
 #### 题目大意
 
-同 *普通取石子游戏规则*，但是不能操作的人胜利。
+同 _普通取石子游戏规则_，但是不能操作的人胜利。
 
 #### 思路
 
 先手必胜的条件为：
+
 1. SG 函数的和为 0 且所有游戏的 SG 函数的值均不大于 1；
 2. SG 函数的和不等于 0 且至少一个游戏的 SG 函数值大于 1。
 

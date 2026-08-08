@@ -7,7 +7,7 @@ tags:
   - 数学
   - 组合计数
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -18,12 +18,9 @@ sidebar:
 
 # 2025 Summer Day15
 
-
 **Content**：组合数学
 
 **Date**：2025.7.31
-
-
 
 # 课堂内容
 
@@ -67,6 +64,5 @@ $$
 参考 Dreamunk 大佬的[题解](http://luogu.com.cn/article/u5s75fn2)。将所有的不合法的情况之间连边，我们就得到了若干条不合法的链，对这些链进行 DP 后，就可以容斥了。
 
 提交记录：[link](https://atcoder.jp/contests/agc005/submissions/68064248)
-
 
 最后的最后，还是要说一句 ~~我恨计数~~

@@ -5,7 +5,7 @@ date: '2025-08-01T03:22:39.534Z'
 draft: false
 tags: []
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -14,9 +14,7 @@ sidebar:
   relatedPosts: true
 ---
 
-
 # 2025 Summer Day19
-
 
 # 内容
 

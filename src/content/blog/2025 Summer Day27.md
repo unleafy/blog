@@ -7,7 +7,7 @@ tags:
   - 图论
   - 二分图
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -17,7 +17,6 @@ sidebar:
 ---
 
 # 2025 Summer Day27
-
 
 ~~昨天忘记传了喵~~~
 

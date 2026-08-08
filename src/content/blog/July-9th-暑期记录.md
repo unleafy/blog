@@ -1,12 +1,12 @@
 ---
-title: "July 9th-暑期记录"
-description: ""
-date: "2026-07-09T12:45:04.645Z"
+title: 'July 9th-暑期记录'
+description: ''
+date: '2026-07-09T12:45:04.645Z'
 draft: true
 showHeroImage: false
-tags: ["Kruskal"]
-categories: ["记录"]
-series: ["2026 暑期记录"]
+tags: ['Kruskal']
+categories: ['记录']
+series: ['2026 暑期记录']
 comments: true
 sidebar:
   enable: true

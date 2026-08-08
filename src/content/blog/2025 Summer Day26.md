@@ -6,7 +6,7 @@ draft: false
 tags:
   - 图论
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -16,7 +16,6 @@ sidebar:
 ---
 
 # 2025 Summer Day26
-
 
 # 课堂内容
 
@@ -46,7 +45,7 @@ x_{n} > x_{1} + c_{n}
 \end{cases}
 $$
 
-容易发现这些不等式的形式和 *Dijkstra* 中三角不等式 $dis_{u} > dis_{v} + w$ 类似。更进一步地，我们发现如果将不等式组中的不等式转化成边 $(x_{i},x_{i+1},c_{i})$ 的话，其实的解就是 $dis_i$。如果原问题无解的话，相当于在图上存在负环。至此，问题解决。
+容易发现这些不等式的形式和 _Dijkstra_ 中三角不等式 $dis_{u} > dis_{v} + w$ 类似。更进一步地，我们发现如果将不等式组中的不等式转化成边 $(x_{i},x_{i+1},c_{i})$ 的话，其实的解就是 $dis_i$。如果原问题无解的话，相当于在图上存在负环。至此，问题解决。
 
 需要注意的是，因为要判断是否存在负环，所以不能使用 **Dijkstra**，而是要使用 **SPFA** 解决此问题。
 
@@ -54,7 +53,7 @@ $$
 
 ### Problem
 
-给点一棵树，每次询问  $(u,v)$ 的最近公共祖先 $LCA(u,v)$。
+给点一棵树，每次询问 $(u,v)$ 的最近公共祖先 $LCA(u,v)$。
 
 ### Solution
 
@@ -72,7 +71,7 @@ $$
 
 #### ST 表
 
-我们在原树上处理出欧拉序，由于原树上的任意一颗子树在欧拉序上对应了一个连续的区间，所以问题就转化为了查询这个区间内深度最小的节点的 *RMQ* 问题，可以用 *ST* 表解决，复杂度为预处理 $O(n \log n)$，查询 $O(1)$。
+我们在原树上处理出欧拉序，由于原树上的任意一颗子树在欧拉序上对应了一个连续的区间，所以问题就转化为了查询这个区间内深度最小的节点的 _RMQ_ 问题，可以用 _ST_ 表解决，复杂度为预处理 $O(n \log n)$，查询 $O(1)$。
 
 #### Tarjan（离线）
 
@@ -159,34 +158,34 @@ int main() {
     std::ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    
+
     cin >> n >> k;
-    
+
     for (int i = 1; i <= n; i++) {
         cin >> arr[i];
         index[i] = i;
         link[i] = (Node) {i - 1, i + 1};
     }
-    
+
     std::sort(index + 1, index + n + 1, [&] (int a, int b) { return arr[a] < arr[b]; });
-    
+
     for (int i = 1; i <= n; i++) {
         int _index = index[i];
         int left = _index, right = _index;
         int rank = 1;
-        
+
         while (link[left].left != 0 && rank < k) {
             rank++;
             left = link[left].left;
         }
-        
+
         while (link[right].right != n + 1 && rank < k) {
             rank++;
             right = link[right].right;
         }
-        
+
         // cout << left << ' ' << right << "\n";
-        
+
         if (rank == k) {
             while (left != link[_index].right && right != n + 1) {
                 answer += 1ll * (left - link[left].left) * (link[right].right - right) * arr[_index];
@@ -194,13 +193,13 @@ int main() {
                 right = link[right].right;
             }
         }
-        
+
         link[link[_index].left].right = link[_index].right;
         link[link[_index].right].left = link[_index].left;
     }
-    
+
     cout << answer << '\n';
-    
+
     return 0;
 }
 ```

@@ -1,12 +1,12 @@
 ---
-title: "July 8th-暑期记录"
-description: ""
-date: "2026-07-08T12:24:01.966Z"
+title: 'July 8th-暑期记录'
+description: ''
+date: '2026-07-08T12:24:01.966Z'
 draft: false
 showHeroImage: false
-tags: ["adhoc"]
-categories: ["记录"]
-series: ["2026 暑期记录"]
+tags: ['adhoc']
+categories: ['记录']
+series: ['2026 暑期记录']
 comments: true
 sidebar:
   enable: true
@@ -22,7 +22,7 @@ sidebar:
 
 [题目链接](https://www.luogu.com.cn/problem/P15088)
 
-一道博弈论的题目. 最开始认为和 **相同数字之间的奇偶性相关**, 但是发现这个性质好像也不太可做, 因为操作的时候可以删除某些数字, 使得这个距离是动态变化的. 
+一道博弈论的题目. 最开始认为和 **相同数字之间的奇偶性相关**, 但是发现这个性质好像也不太可做, 因为操作的时候可以删除某些数字, 使得这个距离是动态变化的.
 
 后来看了看题解, 发现一个极其神秘的性质:
 

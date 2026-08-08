@@ -17,36 +17,32 @@ sidebar:
 
 # CF727F Polycarp's problems
 
-
 ## 算法
-+ 贪心
 
-
+- 贪心
 
 ## 思路
+
 考虑特殊情况。当 $m=1$ 时，问题转化为：给定 $a_0$, 求删除最少元素使得对于任意的 $i$，满足 $\Sigma_{j=0}^{i} a_{j} \ge 0$。
 将特殊情况扩展到 $m \le 10^6$，即对于每一个给定的 $a_0$，求解上述问题。
 考虑贪心，即对于一个 $i$，满足 $\Sigma_{j=0}^{i} a_{j} < 0$， 则必定删除前面最大的负数，才会使最后的结果最优.于是可以逆向思维，倒序遍历数组 $a$，维护一个大根堆(即维护绝对值最小的负数，对于每一个 $a_{i} < 0$, 将其入队；对于每一个 $a_{i} \ge 0$，用 $a_{i}$ 抵消堆顶元素，直到堆为空或 $a_{i} < 0$。
 最后将堆里的元素全部放入一个新数组，即这些负数在 $a_{1} \to a_{n}$ 里都不能被抵消，只能由 $a_{0}$ 抵消，被删除的个数即为剩余负数的个数减去 $a_{0}$ 最多可以抵消的负数，可以二分解决。
 
-
-
 ## 代码
-
 
 ```c
 #include <bits/stdc++.h>
 #define OnlineJudge
-  
+
 using namespace std;
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-  
+ 
   int n, m;
   cin >> n >> m;
-  
+ 
   vector<long long> a(n), b(m);
 
   for (int i = 0; i < n; i++) {
@@ -63,16 +59,16 @@ int main() {
         a[i] += q.top();
         q.pop();
       }
-      
+     
       if (a[i] < 0) {
         q.emplace(a[i]);
       }
     }
     continue;
   }
-  
+ 
   vector<long long> modify;
-  
+ 
   while (!q.empty()) {
     modify.emplace_back(-q.top());
     q.pop();

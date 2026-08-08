@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day12"
-description: ""
-date: "2026-07-28T14:34:52.958Z"
+title: '2026 Summer Day12'
+description: ''
+date: '2026-07-28T14:34:52.958Z'
 draft: false
 showHeroImage: false
-tags: ["模拟赛"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['模拟赛']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true

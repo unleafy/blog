@@ -1,12 +1,12 @@
 ---
-title: "2026 Summer Day6"
-description: ""
-date: "2026-07-22T12:30:34.762Z"
+title: '2026 Summer Day6'
+description: ''
+date: '2026-07-22T12:30:34.762Z'
 draft: false
 showHeroImage: false
-tags: ["虚树", "可持久化"]
-categories: ["记录"]
-series: ["2026 Summer"]
+tags: ['虚树', '可持久化']
+categories: ['记录']
+series: ['2026 Summer']
 comments: true
 sidebar:
   enable: true
@@ -28,7 +28,7 @@ sidebar:
 
 [code](https://www.luogu.com.cn/record/287787016)
 
-### P2839 [国家集训队] middle 
+### P2839 [国家集训队] middle
 
 [题目链接](https://www.luogu.com.cn/problem/P2839)
 

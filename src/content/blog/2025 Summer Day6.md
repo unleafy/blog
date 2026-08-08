@@ -8,7 +8,7 @@ tags:
   - 线段树
   - 可持久化数据结构
 series:
- - '2025 Summer'
+  - '2025 Summer'
 showHeroImage: false
 comments: true
 sidebar:
@@ -19,17 +19,14 @@ sidebar:
 
 # 2025 Summer Day6
 
-
 **Content**：Data Structures;
 
 **Date**：2025.7.22
 
-
-
 ## 概览
 
-+ 可持久化线段树
-+ 虚树
+- 可持久化线段树
+- 虚树
 
 ## 具体内容
 
@@ -44,18 +41,18 @@ sidebar:
 
 我们考虑对那些不用修改的节点进行空间上的优化，具体如下：
 
-+   假设线段树节点 $k$ 维护的区间为 $[l,r]$，其中点为 $mid$。
-+   我们对新版本新建了一个节点 $k'$，接下来分两种情况讨论：
-    + 如果区间 $[l, mid]$ 包括我们要修改的位置，则 $lc(k') = cnt + 1$，$rc(k') = rc(k)$。即我们继承不用修改的节点。
-    + 对于区间 $[mid + 1, r]$ 同理。
+- 假设线段树节点 $k$ 维护的区间为 $[l,r]$，其中点为 $mid$。
+- 我们对新版本新建了一个节点 $k'$，接下来分两种情况讨论：
+  - 如果区间 $[l, mid]$ 包括我们要修改的位置，则 $lc(k') = cnt + 1$，$rc(k') = rc(k)$。即我们继承不用修改的节点。
+  - 对于区间 $[mid + 1, r]$ 同理。
 
 这样我们就极大地降低了空间复杂度。
 
-放张 *OI Wiki* 的图在这里方便理解：
+放张 _OI Wiki_ 的图在这里方便理解：
 
 ![可持久化线段树](https://oi-wiki.org/ds/images/persistent-seg.png)
 
-------
+---
 
 例题1：[洛谷 P3919](https://www.luogu.com.cn/problem/P3919) 可持久化线段树1
 
@@ -165,7 +162,7 @@ int main() {
 }
 ```
 
-------
+---
 
 例题2：[洛谷 P3834](https://www.luogu.com.cn/problem/P3834) 可持久化线段树2
 
@@ -281,7 +278,7 @@ int main() {
 }
 ```
 
-------
+---
 
 例题3：[洛谷 P2633](https://www.luogu.com.cn/problem/P2633) Count on a Tree.
 
